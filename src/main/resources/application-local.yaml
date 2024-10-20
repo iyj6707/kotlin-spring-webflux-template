@@ -1,0 +1,7 @@
+spring:
+  r2dbc:
+    url: r2dbc:mysql://localhost:13306/app
+    username: iyj
+    password: 12345678
+  flyway:
+    enabled: true

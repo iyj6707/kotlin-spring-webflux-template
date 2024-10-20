@@ -1,0 +1,25 @@
+services:
+  db:
+    image: mysql:latest
+    container_name: local-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: app
+      MYSQL_USER: iyj
+      MYSQL_PASSWORD: 12345678
+    ports:
+      - "13306:3306"
+    volumes:
+      - ./docker/local:/var/lib/mysql
+  test-db:
+    image: mysql:latest
+    container_name: test-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: your_root_password
+      MYSQL_DATABASE: app
+      MYSQL_USER: iyj
+      MYSQL_PASSWORD: 12345678
+    ports:
+      - "13307:3306"
+    volumes:
+      - ./docker/test:/var/lib/mysql
